@@ -12,3 +12,5 @@ RUN pecl install -f xdebug && \
     docker-php-ext-enable xdebug
 
 COPY ./etc /usr/local/etc/
+
+EXPOSE 9001

@@ -35,8 +35,7 @@ services:
     ports:
       - "9001:9001"
   database:
-    build:
-      context: "./bin/${DATABASE}"
+    image: mysql:5.7
     container_name: '${COMPOSE_PROJECT_NAME}-database'
     restart: 'always'
     ports:
