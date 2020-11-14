@@ -12,4 +12,7 @@ docker-compose up -d
 ```
 
 # Xdebug Helper
-Install xdebug helper extension on your preferred browser 
+Install xdebug helper extension on your preferred browser
+
+# Credits
+Based on https://github.com/sprintcube/docker-compose-lamp 
