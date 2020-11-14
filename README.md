@@ -10,3 +10,6 @@ cd conditional-xdebug-fpm-docker
 
 docker-compose up -d
 ```
+
+# Xdebug Helper
+Install xdebug helper extension on your preferred browser 
