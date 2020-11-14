@@ -37,7 +37,7 @@ services:
       - "9002:9002"
     restart: 'always'
   mysql:
-    image: mysql:5.7
+    image: mariadb:10.5.8
     container_name: '${COMPOSE_PROJECT_NAME}-mysql'
     restart: 'always'
     ports:
@@ -45,6 +45,7 @@ services:
     volumes: 
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
+      - ${DOCUMENT_ROOT-./www}:/var/www/html/
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
