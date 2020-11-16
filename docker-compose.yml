@@ -17,6 +17,7 @@ services:
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
     environment:
       PMA_PORT: ${HOST_MACHINE_PMA_PORT}
+      XDEBUG_COOKIE_VALUE: ${XDEBUG_COOKIE_VALUE}
     restart: 'always'
   php:
     build:
@@ -31,6 +32,8 @@ services:
     container_name: '${COMPOSE_PROJECT_NAME}-xdebug-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html
+    environment:
+      XDEBUG_COOKIE_VALUE: ${XDEBUG_COOKIE_VALUE}
     restart: 'always'
   mysql:
     image: mariadb:10.5.8

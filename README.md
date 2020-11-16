@@ -1,6 +1,6 @@
 # Conditional xdebug loading
 
-Load xdebug only when the **XDEBUG_SESSION** cookie is set to **PHPSTORM** to avoid slowing down page loads unnecessarily
+Load xdebug only when the **XDEBUG_SESSION** cookie is set to **PHPSTORM** (by default) to avoid slowing down page loads unnecessarily
 
 # Backup your sql data
 If you intend to use this config with existing mysql data, **make sure to backup all your databases** then import then again.  
