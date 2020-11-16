@@ -12,7 +12,7 @@ git clone https://github.com/unlocomqx/conditional-xdebug-fpm-docker
 
 cd conditional-xdebug-fpm-docker
 
-# copy sample.env to .env
+# copy sample.env to .env (don't forget to change DOCUMENT_ROOT and MYSQL_DATA_DIR)
 cp sample.env .env
 
 docker-compose up -d
