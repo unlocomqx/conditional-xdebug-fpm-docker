@@ -24,8 +24,6 @@ services:
     container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html
-    ports:
-      - "9000:9000"
     restart: 'always'
   php_xdebug:
     build:
@@ -33,8 +31,6 @@ services:
     container_name: '${COMPOSE_PROJECT_NAME}-xdebug-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html
-    ports:
-      - "9002:9002"
     restart: 'always'
   mysql:
     image: mariadb:10.5.8
