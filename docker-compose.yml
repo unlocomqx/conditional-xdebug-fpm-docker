@@ -70,6 +70,4 @@ services:
   memcached:
     container_name: memcached
     image: memcached:latest
-    ports:
-      - "11211:11211"
     restart: 'always'
