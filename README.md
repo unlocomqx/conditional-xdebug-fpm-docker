@@ -14,5 +14,8 @@ docker-compose up -d
 # Xdebug Helper
 Install xdebug helper extension on your preferred browser
 
+# phpMyAdmin
+You can access phpmyadmin either via http://localhost:8080 or via http://localhost/phpmyadmin
+
 # Credits
 Based on https://github.com/sprintcube/docker-compose-lamp 
