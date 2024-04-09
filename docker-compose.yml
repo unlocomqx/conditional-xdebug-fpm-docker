@@ -21,14 +21,14 @@ services:
     restart: 'always'
   php:
     build:
-      context: ./bin/php72-fpm
+      context: bin/php81-fpm
     container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:delegated
     restart: 'always'
   php_xdebug:
     build:
-      context: ./bin/php72-xdebug
+      context: bin/php81-xdebug
     container_name: '${COMPOSE_PROJECT_NAME}-xdebug-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:delegated
@@ -36,7 +36,7 @@ services:
       XDEBUG_COOKIE_VALUE: ${XDEBUG_COOKIE_VALUE}
     restart: 'always'
   mysql:
-    image: mariadb:10.5.8
+    image: mariadb:10.11.7
     container_name: '${COMPOSE_PROJECT_NAME}-mysql'
     restart: 'always'
     ports:
