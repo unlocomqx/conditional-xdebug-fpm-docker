@@ -33,6 +33,15 @@ services:
     environment:
       XDEBUG_COOKIE_VALUE: ${XDEBUG_COOKIE_VALUE}
     restart: 'always'
+  php8.2:
+    build:
+      context: bin/php82-xdebug
+    container_name: '${COMPOSE_PROJECT_NAME}-xdebug-php8.2'
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/var/www/html:delegated
+    environment:
+      XDEBUG_COOKIE_VALUE: ${XDEBUG_COOKIE_VALUE}
+    restart: 'always'
   mysql:
     image: mariadb:10.11.7
     container_name: '${COMPOSE_PROJECT_NAME}-mysql'
