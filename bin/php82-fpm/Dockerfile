@@ -1,4 +1,4 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y \
     libxml2-dev \
@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libmemcached-dev \
     libzip-dev \
     libonig-dev \
+    libicu-dev \
     && docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg=/usr/local/lib --with-webp \
     && docker-php-ext-install -j$(nproc) gd curl pdo_mysql mysqli opcache xml zip mbstring intl
 
