@@ -19,24 +19,15 @@ services:
     restart: 'always'
   php:
     build:
-      context: bin/php81-fpm
+      context: bin/php82-fpm
     container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:delegated
     restart: 'always'
   php_xdebug:
     build:
-      context: bin/php81-xdebug
-    container_name: '${COMPOSE_PROJECT_NAME}-xdebug-${PHPVERSION}'
-    volumes:
-      - ${DOCUMENT_ROOT-./www}:/var/www/html:delegated
-    environment:
-      XDEBUG_COOKIE_VALUE: ${XDEBUG_COOKIE_VALUE}
-    restart: 'always'
-  php8.2:
-    build:
       context: bin/php82-xdebug
-    container_name: '${COMPOSE_PROJECT_NAME}-xdebug-php8.2'
+    container_name: '${COMPOSE_PROJECT_NAME}-xdebug-${PHPVERSION}'
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:delegated
     environment:
